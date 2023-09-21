@@ -9,6 +9,7 @@ function answer(str) {
   for (let i = 0; i < str.length; i++){
     for (let j = 0; j < str.length; j++) {
       if (!str[i] == alpha[j]) {
+        if (stack.peek() == alpha[j])  
         stack.push(alpha[j]);
         result.push(0);
       } else if (str[i] == alpha[i]) {
@@ -18,9 +19,9 @@ function answer(str) {
         result.push(1);
       }
     }
+  }
 
       
-  }
 
   return result;
 }

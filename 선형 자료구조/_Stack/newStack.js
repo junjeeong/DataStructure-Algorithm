@@ -11,7 +11,6 @@ Stack.prototype.getBuffer = function () {
 
 // isEmpty() : 객체 내 데이터 o/x
 Stack.prototype.isEmpty = function() {
-    //
     return this.length === 0;
 }
 
@@ -41,9 +40,19 @@ stack.push(3);
 console.log(stack);
 console.log(stack.pop());
 console.log(stack.pop());
-console.log(stack);
-console.log(stack.pop());
-console.log(stack);
-console.log(stack.pop());
 
+// index() : 매개변수로 넘어온 element의 위치 확인
+Stack.prototype.index = function (element, position=0) {
+    for (let i = position; i < this.arr.length; i++){
+        if (element === this.arr[i]) return i;
+    }
+}
+
+// include() : 매개변수로 넘어온 elements가 있는지 확인
+Stack.prototype.include = function (element) {
+    for (let i = 0; i < this.arr.length; i++){
+        if (element == this.arr[i]) return true;
+    }
+    return false;
+}
 
