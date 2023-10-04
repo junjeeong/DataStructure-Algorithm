@@ -8,34 +8,28 @@ Queue.prototype.getBuffer = function () {
 }
 
 Queue.prototype.isEmpty = function () {
-  return this.length == 0;
+  return this.length == 0 ? 1 : 0;
 }
 
 Queue.prototype.size = function () {
   return this.length;
 }
 
-Queue.prototype.prontPush = function (element) {
-  return this.arr.unshift(element);
-}
-
-Queue.prototype.prontPop = function () {
-  return this.arr.unshift();
-}
-
-Queue.prototype.backPush = function (element) {
-  return this.arr.push(element);
-}
-
-Queue.prototype.backPop = function () {
-  return this.arr.pop();
-}
 Queue.prototype.front = function (arr) {
-  return this.arr.length == 0 ? undefined : this.arr[0];
+  return this.arr.length == 0 ? -1 : this.arr[0];
 }
 
 Queue.prototype.back = function (arr) {
   return this.arr.length == 0 ? -1 : this.arr[this.arr.length - 1];
+}
+
+Queue.prototype.enqueue = function (element) {
+  this.arr.push(element);
+}
+
+Queue.prototype.dequeue = function (element) {
+  let ret = this.arr.shift();
+  return ret === undefined ? -1 : ret;
 }
 
 Queue.prototype.clear = function (arr) {

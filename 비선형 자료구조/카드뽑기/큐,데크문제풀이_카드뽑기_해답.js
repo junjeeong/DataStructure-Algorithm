@@ -18,6 +18,7 @@ function answer(n) {
 
   // 0. 카드 초기화
   let queue = new Queue();
+  
   for (let i = 1; i <= n; i++) {
     queue.enqueue(i);
   }
